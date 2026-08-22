@@ -13,6 +13,25 @@ no claim filed, no oracle, no AVS.
 > transactions or addresses. See [SECURITY.md](SECURITY.md) and
 > [MECHANISM.md](MECHANISM.md) for exactly what is and isn't guaranteed.
 
+## Deployed instance (Unichain Sepolia)
+
+All four contracts below are deployed and **source-verified** on Uniscan.
+
+| Contract | Address | Verified source |
+|---|---|---|
+| BackstopHook | `0x37Cbf59e9A03a303d8B9409c3151374b08f10ac8` | [uniscan.xyz](https://sepolia.uniscan.xyz/address/0x37Cbf59e9A03a303d8B9409c3151374b08f10ac8#code) |
+| BackstopRegistry | `0x64725eE80dA8d86b790b52F3c016a3b10c485D54` | [uniscan.xyz](https://sepolia.uniscan.xyz/address/0x64725eE80dA8d86b790b52F3c016a3b10c485D54#code) |
+| InsuranceVault | `0xbc371b61052B4811424643cA41E9A4aFC94dc58e` | [uniscan.xyz](https://sepolia.uniscan.xyz/address/0xbc371b61052B4811424643cA41E9A4aFC94dc58e#code) |
+| PoolManager | `0x9B851BA8a469314EAafDDa5A0DD46B309E34cbd0` | [uniscan.xyz](https://sepolia.uniscan.xyz/address/0x9B851BA8a469314EAafDDa5A0DD46B309E34cbd0#code) |
+| currency0 (bond asset, demo token) | `0x309C14339f77671305C1A8d020E9E081c6336251` | — |
+| currency1 (demo token) | `0x63Dbb10EA994AAc43D1E94d5429B4f28DfFC8BDa` | — |
+
+Deployed via `script/Deploy.s.sol`, wiring and initialization independently confirmed on-chain
+(not just trusted from the script's own log) via `cast call` against `registry.hook()` /
+`vault.hook()`. Uniscan is Etherscan's own explorer for Unichain Sepolia (chain id `1301`), served
+through their unified V2 multichain API — a plain etherscan.io API key verifies here, not a
+separate Uniscan-specific one; see `foundry.toml`'s `[etherscan]` section.
+
 ## Documents
 
 | Doc | What's in it |
